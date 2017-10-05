@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    
+  
+   <style type="text/css">
+  	
+  	
+  	.date{
+  		font-height:4px;
+  	}
+  	a{
+      list-style: none;
+      text-decoration: none;
+      color: white;
+    }
+    #top{
+  		margin-top: -50px;
+  	}
+    
+    .footer{
+      text-align: center;
+    }
+  </style>
+  </head>
+ 
+  <body>
+  	<div class="container" id="top">
+  
+  		<div class="page-header">
+  			<h1 class="heading">Blog</h1>
+  		</div>
+  	
+		</div>  	
+  	<!--nav bar-->
+  	<nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      <li><a href="/">Home</a></li>
+        <li><a href="/posts">Add Post</a></li>
+        <li><a href="/categories">Add Categories</a></li>
+        
+      </ul>
+     
+    </div><!-- /.navbar-collapse -->
+
+  </div><!-- /.container-fluid -->
+
+</nav>
+
+
+    <% for(var i=0; i< result.length; i++){ %>
+    	<div class="container">
+    		<div class="jumbotron" >
+    			<h2 class="title"><%= result[i].title %></h2><br>
+    			<h4 class="category" ><%= result[i].categories %></h4>
+    			<h5 class="author"><%= result[i].author %></h5>
+    			<h5 class="date"><%= result[i].date %></h5>
+    			
+    			<button class="btn btn-md btn-success id="clickme"><a href="/read/<%= result[i]._id %>">Read</a></button>
+    		</div>
+    	</div>
+    <% } %>
+    	
+   <div class="container footer">
+		<div class="row">
+    		<div class="col-lg-12">
+    		<p>Blog &copy; 2017 </p>
+    		
+    	</div>
+    </div> 	
+ 
+  </body>
+</html>
